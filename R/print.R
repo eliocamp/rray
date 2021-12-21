@@ -71,7 +71,7 @@ obj_str_data.vctrs_rray <- function(x, ...) {
   }
 
   title <- glue::glue(" {vec_ptype_abbr(x)} {vec_ptype_shape(x)}[{vec_size(x)}] ")
-  cat_line(inline_list(title, format(out), width = width))
+  cat_line(inline_list(title, format(out[1:100]), width = width))
 
   invisible(x)
 }
