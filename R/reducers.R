@@ -162,6 +162,9 @@ rray_min <- function(x, axes = NULL) {
 # ------------------------------------------------------------------------------
 
 rray_reducer_base <- function(f, x, axes) {
+  if (is.character(axes)) {
+    axes <- setNames(seq_along(dim(x)), names(dim(x)))[axes]
+  }
   axes <- vec_cast(axes, integer())
   validate_axes(axes, x)
 
