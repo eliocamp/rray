@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // rray__add
 Rcpp::RObject rray__add(Rcpp::RObject x, Rcpp::RObject y);
 RcppExport SEXP _rray_rray__add(SEXP xSEXP, SEXP ySEXP) {
